@@ -1,0 +1,79 @@
+h1,
+h2 {
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+}
+h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+h2 {
+  padding: 40px;
+}
+
+.container {
+  background-image: linear-gradient(
+    #13225a,
+    #202a66,
+    #453f82,
+    #6e5194,
+    #855b9c,
+    #905f9f,
+    #9662a2
+  );
+  color: #ffecda;
+  max-width: 600px;
+  min-height: 1000px;
+  border-radius: 30px;
+  margin: 0 auto;
+  padding: 60px;
+}
+
+.searchbar {
+  min-width: 60%;
+  min-height: 35px;
+  border-radius: 2rem;
+  border: none;
+  padding: 0.5rem;
+
+  background: linear-gradient(
+    to left bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.2)
+  );
+
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+.searchbar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 15px rgba(31, 31, 31, 0.1);
+}
+.search-btn,
+.currentBtn {
+  margin-left: 10px;
+  width: 80px;
+  min-height: 35px;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  color: black;
+  background: linear-gradient(
+    to left bottom,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.2)
+  );
+
+  border: none;
+  border-radius: 2rem;
+  box-shadow: 0 8px 15px rbga(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+}
+
+.search-btn:hover,
+.currentBtn:hover {
+  box-shadow: 0 8px 15px rgba(31, 31, 31, 0.1);
+  transform: translateY(-4px);
+}
