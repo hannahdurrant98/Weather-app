@@ -39,7 +39,7 @@ p {
   padding-right: 15px;
 }
 
-.searchbar {
+.city-input {
   min-width: 60%;
   min-height: 25px;
   border-radius: 2rem;
@@ -56,7 +56,7 @@ p {
   cursor: pointer;
 }
 
-.searchbar:hover {
+.city-input:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 16px #071549;
 }
@@ -95,6 +95,9 @@ p {
 
 .units {
   font-size: 20px;
+}
+.active {
+  color: coral;
 }
 .row {
   text-align: center;

@@ -16,13 +16,14 @@
     <div class="container">
        <h1 class = "city">Name of City</h1>
 
-          <form id="search-location">
+        <form id="search-location">
 
-          <input type="text" 
-          class="searchbar"
-         id="search-city"
-         placeholder=" Enter Location"
-         autocomplete="off" />
+        <input type="text" 
+        class="city-input
+        "
+        id="city-input"
+        placeholder=" Enter Location"
+        autocomplete="off" />
   
     <button class="search-btn"
     type="submit">Search
@@ -41,34 +42,41 @@
     <div class = "discription">Light Cloud</div>
 </h3>
 
-<h4><span class = "temperature">23°</span><span class = "untis">c|f</span><h4>
+<h4><span class="temperature">23°</span><span class = "untis">
+    <a class = "celcius-link" class = "active"> c </a>
+    |
+    <a class="fahrenheit-link"> f </a>
+</span><h4>
+    
     <p>
-        <span class="Humidity">Humidity</span>
-    </br>
-        <span class ="wind">Wind Speed</span>
+        <ul>
+            <li>
+                Humidity:<span id="Humidity"></span>%
+            </li>
+            <li>
+                Wind Speed <span id ="wind"></span>km/h
+            </li>
+        </ul>       
     </p>
 
 
 
-    <div class="row g-2">
+    <div class="row weather-forecast" id = "forecast">
         <div class="col-4">
-            <div class="first-temp">6.00</div>
-        </div>
-        <div class="col-4">
-            <div class="second-temp">9.00</div>
-        </div>
-        <div class="col-4">
-            <div class="third-temp">12.00</div>
-        </div>
-        <div class="col-4">
-            <div class="fourth-temp">15.00</div>
-        </div>
-        <div class="col-4">
-            <div class="firth-temp">18.00</div>
-        </div>
-        <div class="col-4">
-            <div class="sixth-temp">21.00</div>
-        </div>
+            <p2>
+                6.00
+            </p2>
+            <img 
+            src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
+            alt=""/>
+
+            <div class ="weather-forecast-temperature">
+                <strong>22</strong>17
+            </div>
+
+
+
+
 
 </div>
 </div>

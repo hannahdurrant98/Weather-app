@@ -3,7 +3,6 @@ function formatDates (timestamp) {
     let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     let day = days[date.getDays()];
     return`${day} ${formatHours(timestamp)}`;
-    console.log(date);
 }
 function formatHours(timestamp) {
     let date = new Date (timestamp);
@@ -30,5 +29,69 @@ function displayTemperature(response) {
     humidityElement.innerHTML = response.data.main.humidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
     dateElement.innerHTML = formatDates(response.data.dt * 1000);
-    iconElement.setAttribute("src", ``)
+    iconElement.setAttribute("src", `https://openweather.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    iconElement.setAttribute("alt", response.data.weather[0].discription);
 }
+
+function displayForecast(response) {
+    let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML= null;
+    let forecast = null;
+        for (let index=0; index<7; index ++) {
+            forecast = response.data.list[index];
+            forecastElement.innerHTML+=`
+            <div class = "col-4">
+                <p2>
+                    ${formatHours(forcast.dt * 1000)}
+                </p2>
+                <img src = "https://openweather.org/img/wn/${forecast.weather[0].icon}@2x.png"/>
+                <div class = "weather-forecast-temperature">
+                <strong> ${Math.round(forecast.main.temp_max)}°
+                </strong> ${Math.round(forecast.main.temp_min)}°
+            </div>
+            </div> `;
+        }
+}
+
+function search (city) {
+    let apiKey = "90d9f85b35ad3264503f92b46676dc6c";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apikey}&units=metric`;
+    axios.get(apiUrl).then(displayTemperature);
+
+    apiUrl=`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apikey}&units=metric`;
+    axios.get(apiKey).then(displayForecast);
+}
+
+function handleSubmit (event) {
+    event.preventDefault();
+    let cityInputElement = document.querySelector("#city-input");
+    search(cityInputElement.value);
+
+}
+
+function displayfahrenheitTemperature (event){
+    event.preventDefault();
+    let temperature = document.querySelector("#temperature");
+
+    let fahrenheitTemperature = (celciusTemperature *9)/5+32;
+    temperatureElement.innerHTML=Math.round(fahrenheitTemperature);
+}
+function displayCelcuisTemperature(event){
+    event.preventDefault();
+
+    let temperatureElement = document.querySelector("#temperature");
+    temperatureElement.innerHTML=Math.round(celciusTemperature);
+}
+
+let celciusTemperature = null;
+
+let form = document.querySelector("#search-location");
+form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayfahrenheitTemperature);
+
+let celcuisLink = document.querySelector("#celcuis-link");
+celcuisLink.addEventListener("click", displayCelcuisTemperature);
+
+search("New York");
