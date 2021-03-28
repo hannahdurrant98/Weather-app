@@ -12,46 +12,58 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Weather</title>
 </head>
-<body>
+<body> 
     <div class="container">
-       <h1 class = "city">Name of City</h1>
+           <h1 id="city" class="city"></h1>
 
-        <form id="search-location">
+            <form id="search-form">
 
-        <input type="text" 
-        class="city-input
-        "
-        id="city-input"
-        placeholder=" Enter Location"
-        autocomplete="off" />
+            <input type="text" 
+            class="city-input"
+            id="city-input"
+            placeholder=" Enter Location"
+            autocomplete="off" />
   
-    <button class="search-btn"
-    type="submit">Search
-    </button>
+            <button
+            class="search-btn"
+            type="submit"
+            value="Search"
+            id="search-btn"
+            >Search
+            </button>
 
-    <button class="currentBtn"
-    type="submit" id="current-btn"
-    value="">Current
-    </button>
-</form>
+            <button 
+            class="currentBtn"
+            type="submit"
+            id="current-btn"
+            value="Current">Current
+            </button>
+        </form>
 
-<h2><span class="date">Date Time</span></h2>
-
-<h3>
-    <div class ="icon">🌞</div>
-    <div class = "discription">Light Cloud</div>
-</h3>
-
-<h4><span class="temperature">23°</span><span class = "untis">
-    <a class = "celcius-link" class = "active"> c </a>
-    |
-    <a class="fahrenheit-link"> f </a>
-</span><h4>
+        <h2>
+            <span id="date" value = "date"> Date </span>
+        </h2>
+        <img scr="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+             alt="Clear"
+             id="icon"
+             class="icon"
+             width="150"
+             />
+         <h3>
+              <span id="description" class="description">Light Cloud</span>
+         </h3>
+         <h4>
+              <span id="temperature" class="temperature">23°</span>
+              <span class="units">
+                  <a href="#" id="celsius-link" class="highlighted">°C</a> |
+                  <a href="#" id="fahrenheit-link">°F</a>
+              </span>
+         <h4>
     
     <p>
         <ul>
             <li>
-                Humidity:<span id="Humidity"></span>%
+                Humidity: <span value="weather-humidity" id="humidity"></span>%
             </li>
             <li>
                 Wind Speed <span id ="wind"></span>km/h
@@ -59,28 +71,21 @@
         </ul>       
     </p>
 
-
-
-    <div class="row weather-forecast" id = "forecast">
-        <div class="col-4">
-            <p2>
-                6.00
-            </p2>
-            <img 
-            src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
-            alt=""/>
-
-            <div class ="weather-forecast-temperature">
+    <div class = "row weather-forecast">
+        <div class="col-2">
+            <h5>
+                6.00am
+            </h5>
+            <img scr="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                 alt=""/>
+            <div class="weather-forecast-temperature">
                 <strong>22</strong>17
             </div>
+        </div>
+    </div>
 
-
-
-
-
+    
 </div>
-</div>
-
     <script src="src/index.js"></script>
 </body>
 </html>
