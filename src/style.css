@@ -11,7 +11,8 @@ h1 {
   margin-bottom: 20px;
 }
 h2 {
-  padding: 30px;
+  padding-top: 30px;
+  margin: 0 auto;
 }
 h3:first-letter {
   text-transform: capitalize;
@@ -46,7 +47,7 @@ li {
   );
   color: #facbf0;
   max-width: 600px;
-  min-height: 1000px;
+  min-height: 600px;
   border-radius: 30px;
   margin: 0 auto;
   padding-top: 40px;
@@ -120,5 +121,6 @@ li {
   font-size: 30px;
 }
 .row weather-forecast {
-  font-size: 40px;
+  font-size: 20px;
+  text-decoration: inline;
 }
