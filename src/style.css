@@ -16,6 +16,9 @@ h2 {
 h3:first-letter {
   text-transform: capitalize;
 }
+h4 {
+  margin: 0 auto;
+}
 a {
   text-decoration: none;
   font-size: 30px;
@@ -107,7 +110,6 @@ li {
   font-size: 150px;
   margin-left: 20px;
   position: relative;
-  top: 80px;
 }
 
 .highlighted {
@@ -116,4 +118,7 @@ li {
 .row {
   text-align: center;
   font-size: 30px;
+}
+.row weather-forecast {
+  font-size: 40px;
 }
