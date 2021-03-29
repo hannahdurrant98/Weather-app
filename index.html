@@ -43,35 +43,37 @@
         <h2>
             <span id="date" value = "date"></span>
         </h2>
+        
         <img scr="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
              alt="Clear"
              id="icon"
              class="icon"
-             width="150"
+             width="180"
              />
-         <h3>
-              <span id="description" class="description">Light Cloud</span>
-         </h3>
-         <h4>
-              <span id="temperature" class="temperature">23°</span>
+         
+              <span id="temperature" class="temperature"></span>
               <span class="units">
                   <a href="#" id="celsius-link" class="highlighted">°C</a> |
-                  <a href="#" id="fahrenheit-link">°F</a>
+                  <a href="#" id="fahrenheit-link" class="highlighted">°F</a>
               </span>
-         <h4>
+         
     
-    <p>
+    
         <ul>
             <li>
-                Humidity: <span value="weather-humidity" id="humidity"></span>%
+                <span id="description" class="description"></span>
+            </li>
+            <li>
+                Humidity <span value="weather-humidity" id="humidity"></span>%
             </li>
             <li>
                 Wind Speed <span id ="wind"></span>km/h
             </li>
         </ul>       
-    </p>
-    <div class = "row-weather-forecast" id="forecast">
-    </div>
+    
+    <h5>
+        <div class = "row weather-forecast" id="forecast"></div>
+    </h5>
 </div>
     <script src="src/index.js"></script>
 </body>

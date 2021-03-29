@@ -14,25 +14,40 @@ h2 {
   padding-top: 30px;
   margin: 0 auto;
 }
-h3:first-letter {
-  text-transform: capitalize;
+h3 {
+  margin-top: 30px;
+  position: relative;
+  right: -180px;
 }
+
 h4 {
   margin: 0 auto;
 }
+h5 {
+  font-size: 25px;
+}
+
 a {
   text-decoration: none;
   font-size: 30px;
 }
 a:hover {
+  color: #8609c0;
   cursor: pointer;
 }
 li {
+  text-transform: capitalize;
   text-align: right;
   position: relative;
   font-size: 20px;
   top: -80px;
   list-style-type: none;
+}
+
+p,
+ul {
+  padding: 0 auto;
+  margin: 0 auto;
 }
 
 .container {
@@ -46,8 +61,8 @@ li {
     #9662a2
   );
   color: #facbf0;
-  max-width: 600px;
-  min-height: 600px;
+  max-width: 650px;
+  min-height: 700px;
   border-radius: 30px;
   margin: 0 auto;
   padding-top: 40px;
@@ -60,7 +75,7 @@ li {
 }
 
 .city-input {
-  min-width: 60%;
+  min-width: 65%;
   min-height: 25px;
   border-radius: 2rem;
   border: none;
@@ -106,11 +121,25 @@ li {
   box-shadow: 0 8px 15px #071549;
   transform: translateY(-4px);
 }
-
+.discription {
+  text-align: left;
+}
+.icon {
+  position: relative;
+  left: 220px;
+  top: -80px;
+}
 .temperature {
-  font-size: 150px;
+  font-size: 180px;
   margin-left: 20px;
   position: relative;
+  left: -200px;
+}
+.units {
+  color: #a058c7;
+  position: relative;
+  left: -190px;
+  top: -100px;
 }
 
 .highlighted {
@@ -120,7 +149,7 @@ li {
   text-align: center;
   font-size: 30px;
 }
-.row weather-forecast {
+.weather-forecast-temperature {
   font-size: 20px;
-  text-decoration: inline;
+  margin-bottom: 20px;
 }

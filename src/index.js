@@ -55,24 +55,28 @@ function displayForecast(response){
 
     forecast = response.data.list[index];  
 
-    forecastElement.innerHTML += `        
-        <div class="col-2">
-            <h5>
-                ${formatHours(forecast.dt * 1000)}
-            </h5>
-            <img
-        src="http://openweathermap.org/img/wn/${forecast.weather[0].icon}@2x.png"
+    forecastElement.innerHTML += `   
+    <div class="col-2">
+      <h5>
+        ${formatHours(forecast.dt * 1000)}
+      </h5>
+      <img
+        src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
       />
-            <div class="weather-forecast-temperature">
-                <strong>Max: ${Math.round(forecast.main.temp_max)}° </strong>
-                Min: ${Math.round(forecast.main.temp_min)}°
-            </div>
-        </div>
+      <div class="weather-forecast-temperature">
+        <strong>
+          Max: ${Math.round(forecast.main.temp_max)}°
+        </strong></br>
+        Min: ${Math.round(forecast.main.temp_min)}°
+      </div>
+    </div>
         `
     } 
 }
 
-function search(city){
+function searchCity(city){
     let apiKey = "90d9f85b35ad3264503f92b46676dc6c";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(apiUrl).then(displayTemperature);
@@ -96,7 +100,14 @@ function showPosition(position){
 function handleSubmit(event){
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
-    search(cityInputElement.value);
+    let city = document.querySelector("#city");
+    let h1 = document.querySelector("h1");
+    if (cityInputElement.value) {
+        city.innerHTML = `${cityInputElement.value}`;
+    } else {
+        h1.innerHTML = `Please enter a city`;
+    }    
+    searchCity(cityInputElement.value);
 }
 
 function getCurrentPosition(event) {
@@ -133,4 +144,4 @@ currentButton.addEventListener("click", getCurrentPosition);
 
 navigator.geolocation.getCurrentPosition(showPosition);
 
-search("London");
+searchCity("London");
