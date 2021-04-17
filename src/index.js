@@ -1,3 +1,4 @@
+//Current date and time
 function formatDate(timestamp) {
     let date = new Date (timestamp)
     let number = date.getDate();
@@ -13,7 +14,7 @@ function formatDate(timestamp) {
     let day = days[date.getDay()];
     return `${day} ${number} ${month}, ${hours}:${minutes}`;    
 }
- 
+ // Timestamp of location
 function formatHours(timestamp){
     let date = new Date (timestamp)
     let hours = date.getHours();
@@ -24,7 +25,7 @@ function formatHours(timestamp){
     return `${hours}:${minutes}`;
 
 }
-
+// Loactions weather details
 function displayTemperature(response) {
     console.log(response.data);
     let temperatureElement = document.querySelector("#temperature");
@@ -45,7 +46,7 @@ function displayTemperature(response) {
     dateElement.innerHTML = formatDate(response.data.dt * 1000);
     iconElement.setAttribute("src",`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
-
+// Changes icons
 function displayForecast(response){      
     let forecastElement = document.querySelector("#forecast");
     forecastElement.innerHTML = null;
@@ -75,7 +76,7 @@ function displayForecast(response){
         `
     } 
 }
-
+// API Location
 function searchCity(city){
     let apiKey = "90d9f85b35ad3264503f92b46676dc6c";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -84,7 +85,7 @@ function searchCity(city){
     apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`
     axios.get(apiUrl).then(displayForecast);
 }
-
+// Location button
 function showPosition(position){
     let apiKey = "90d9f85b35ad3264503f92b46676dc6c";
     let lat = position.coords.latitude;
@@ -96,7 +97,7 @@ function showPosition(position){
     axios.get(apiUrl).then(displayForecast);
 }
 
-
+// Search bar when nothing is entered 
 function handleSubmit(event){
     event.preventDefault();
     let cityInputElement = document.querySelector("#city-input");
@@ -109,19 +110,19 @@ function handleSubmit(event){
     }    
     searchCity(cityInputElement.value);
 }
-
+// Current location
 function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
-
+// Changes celsius temperature to fahrenheit
 function displayFahrenheitTemperature(event){
     event.preventDefault();
     let fahrenheitTemperature = (celsiusTemperature * 9 / 5) + 32;
     let temperatureElement = document.querySelector("#temperature");
     temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
- 
+ // Displays celsius temperature
 function displayCelsiusTemperature(event){
     event.preventDefault();
     let temperatureElement = document.querySelector("#temperature");
